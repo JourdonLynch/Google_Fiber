@@ -1,8 +1,8 @@
--- Market Size by initial contacts
+  -- Market Size by total calls
 SELECT
-  RANK() OVER(ORDER BY SUM(contacts_n) DESC) AS Market_Size,
+  RANK() OVER(ORDER BY SUM(contacts_n + contacts_n_1 + contacts_n_2 + contacts_n_3 + contacts_n_4 + contacts_n_5 + contacts_n_6 + contacts_n_7) DESC) AS Market_Size,
   new_market AS Service_Area,
-  SUM(contacts_n) AS INITIAL_CONTACTS,
+  SUM(contacts_n + contacts_n_1 + contacts_n_2 + contacts_n_3 + contacts_n_4 + contacts_n_5 + contacts_n_6 + contacts_n_7) AS Total_Calls,
 FROM
   `business-intelligence-402301.Markets.google_data`
 GROUP BY
@@ -11,142 +11,82 @@ ORDER BY
   SUM(contacts_n) DESC
 
 
--- Market 1 breakdown by problem type
+
+  --Market breakdown by initial calls and problem type
 WITH
   problem_count AS (
   SELECT
+    new_market AS Market,
     CASE
       WHEN new_type = 'type_1' THEN 'Account Management'
       WHEN new_type = 'type_2' THEN 'Technician Troubleshooting'
       WHEN new_type = 'type_3' THEN 'Scheduling'
-      WHEN new_type = 'type_4' THEN 'Contruction'
+      WHEN new_type = 'type_4' THEN 'Construction'
       WHEN new_type = 'type_5' THEN 'Internet and Wifi'
   END
-    AS Market_1_Problem_Type,
+    AS Problem_Type,
     SUM(contacts_n) AS Count
   FROM
     Markets.google_data
-  WHERE
-    new_market = 'market_1'
   GROUP BY
-    new_type
+    new_type,
+    Market
   ORDER BY
-    SUM(contacts_n) DESC 
-)
-
-SELECT
-  *,
-  ROUND((Count*100/42347),3) AS percentage
-FROM
-  problem_count
-
---Market 1 breakdown by repeat calls and problem type
-SELECT
-  new_type AS Market_1_Problem_type,
-  SUM(contacts_n) AS Initial_Call,
-  SUM(contacts_n_1) AS Day_1_Repeat_Call,
-  SUM(contacts_n_2) AS Day_2_Repeat_Call,
-  SUM(contacts_n_3) AS Day_3_Repeat_Call,
-  SUM(contacts_n_4) AS Day_4_Repeat_Call,
-  SUM(contacts_n_5) AS Day_5_Repeat_Call,
-  SUM(contacts_n_6) AS Day_6_Repeat_Call,
-  SUM(contacts_n_7) AS Day_7_Repeat_Call,
-FROM
-  Markets.google_data
-WHERE
-  new_market = 'market_1'
-GROUP BY
-  new_type;
-
-
-
---Market 2 breakdown by problem type
-WITH
-  problem_count AS(
-  SELECT
-    CASE
-      WHEN new_type = 'type_1' THEN 'Account Management'
-      WHEN new_type = 'type_2' THEN 'Technician Troubleshooting'
-      WHEN new_type = 'type_3' THEN 'Scheduling'
-      WHEN new_type = 'type_4' THEN 'Contruction'
-      WHEN new_type = 'type_5' THEN 'Internet and Wifi'
-  END
-    AS Market_2_Problem_Type,
-    SUM(contacts_n) AS Count
-  FROM
-    Markets.google_data
-  WHERE
-    new_market = 'market_2'
-  GROUP BY
-    new_type
-  ORDER BY
+    Market,
     SUM(contacts_n) DESC )
 SELECT
   *,
-  ROUND((Count*100/356),3) AS percentage
+  ROUND(SUM(Count)*100/SUM(SUM(count)) OVER(PARTITION BY Market ),2) AS Percent_of_Total,
 FROM
   problem_count
+GROUP BY
+  Market,
+  problem_type,
+  count
+ORDER BY
+  Market,
+  Percent_of_Total DESC
 
---Market 2 breakdown by repeat calls and problem type
+
+
+  --Market Breakdown by repeat calls and problem type
 SELECT
-  new_type AS Market_1_Problem_type,
-  SUM(contacts_n) AS Initial_Call,
-  SUM(contacts_n_1) AS Day_1_Repeat_Call,
-  SUM(contacts_n_2) AS Day_2_Repeat_Call,
-  SUM(contacts_n_3) AS Day_3_Repeat_Call,
-  SUM(contacts_n_4) AS Day_4_Repeat_Call,
-  SUM(contacts_n_5) AS Day_5_Repeat_Call,
-  SUM(contacts_n_6) AS Day_6_Repeat_Call,
-  SUM(contacts_n_7) AS Day_7_Repeat_Call,
+  new_market AS Market,
+  CASE
+    WHEN new_type = 'type_1' THEN 'Account Management'
+    WHEN new_type = 'type_2' THEN 'Technician Troubleshooting'
+    WHEN new_type = 'type_3' THEN 'Scheduling'
+    WHEN new_type = 'type_4' THEN 'Construction'
+    WHEN new_type = 'type_5' THEN 'Internet and Wifi'
+END
+  AS Problem_Type,
+  SUM(contacts_n) AS Initial_Calls,
+  SUM(contacts_n_1) AS Day_1_Repeat_Calls,
+  SUM(contacts_n_2) AS Day_2_Repeat_Calls,
+  SUM(contacts_n_3) AS Day_3_Repeat_Calls,
+  SUM(contacts_n_4) AS Day_4_Repeat_Calls,
+  SUM(contacts_n_5) AS Day_5_Repeat_Calls,
+  SUM(contacts_n_6) AS Day_6_Repeat_Calls,
+  SUM(contacts_n_7) AS Day_7_Repeat_Calls,
 FROM
   Markets.google_data
-WHERE
-  new_market = 'market_2'
 GROUP BY
-  new_type;
+  new_market,
+  new_type
+ORDER BY
+  Market;
 
 
---Market 3 breakdown by problem type
-WITH
-  problem_count AS(
-  SELECT
-    CASE
-      WHEN new_type = 'type_1' THEN 'Account Management'
-      WHEN new_type = 'type_2' THEN 'Technician Troubleshooting'
-      WHEN new_type = 'type_3' THEN 'Scheduling'
-      WHEN new_type = 'type_4' THEN 'Contruction'
-      WHEN new_type = 'type_5' THEN 'Internet and Wifi'
-  END
-    AS Market_3_Problem_Type,
-    SUM(contacts_n) AS Count
-  FROM
-    Markets.google_data
-  WHERE
-    new_market = 'market_3'
-  GROUP BY
-    new_type
-  ORDER BY
-    SUM(contacts_n) DESC )
+ -- Peak initial calls day by market
 SELECT
-  *,
-  ROUND((Count*100/8682),3) AS percentage
+ DISTINCT new_market AS `Service Area`,
+ MAX(SUM(contacts_n)) OVER(PARTITION BY new_market) AS `Peak initial calls`,
 FROM
-  problem_count
-
---Market 3 breakdown by repeat calls and problem type
-SELECT
-  new_type AS Market_1_Problem_type,
-  SUM(contacts_n) AS Initial_Call,
-  SUM(contacts_n_1) AS Day_1_Repeat_Call,
-  SUM(contacts_n_2) AS Day_2_Repeat_Call,
-  SUM(contacts_n_3) AS Day_3_Repeat_Call,
-  SUM(contacts_n_4) AS Day_4_Repeat_Call,
-  SUM(contacts_n_5) AS Day_5_Repeat_Call,
-  SUM(contacts_n_6) AS Day_6_Repeat_Call,
-  SUM(contacts_n_7) AS Day_7_Repeat_Call,
-FROM
-  Markets.google_data
-WHERE
-  new_market = 'market_3'
+ `business-intelligence-402301.Markets.google_data`
 GROUP BY
-  new_type;
+ new_market ,date_created
+ ORDER BY
+ new_market
+
+
+ 
