@@ -13,7 +13,7 @@ ORDER BY
 
 -- Market 1 breakdown by problem type
 WITH
-  problem_count AS(
+  problem_count AS (
   SELECT
     CASE
       WHEN new_type = 'type_1' THEN 'Account Management'
@@ -31,7 +31,9 @@ WITH
   GROUP BY
     new_type
   ORDER BY
-    SUM(contacts_n) DESC )
+    SUM(contacts_n) DESC 
+)
+
 SELECT
   *,
   ROUND((Count*100/42347),3) AS percentage
