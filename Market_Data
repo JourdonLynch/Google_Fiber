@@ -1,6 +1,6 @@
   -- Market Size by total calls
 SELECT
-  RANK() OVER(ORDER BY SUM(contacts_n + contacts_n_1 + contacts_n_2 + contacts_n_3 + contacts_n_4 + contacts_n_5 + contacts_n_6 + contacts_n_7) DESC) AS Market_Size,
+  RANK() OVER(ORDER BY SUM(contacts_n) DESC) AS Market_Size,
   new_market AS Service_Area,
   SUM(contacts_n + contacts_n_1 + contacts_n_2 + contacts_n_3 + contacts_n_4 + contacts_n_5 + contacts_n_6 + contacts_n_7) AS Total_Calls,
 FROM
