@@ -1,7 +1,11 @@
 # Google_Fiber
 
-Business problem: 
-The Google Fiber team is experiencing a high volume of  complaint calls from customers.Their main goal is to effectively communicate with the customers to reduce call volume, increase customer satisfaction, and improve operational optimization.
+Introduction/Business problem
+
+
+Introduction:
+The Google Fiber company provide high-speed internet to homes and businesses through their fiber-optic services which are advertized as faster and more reliable than traditional internet connections. However they hve recently been experiecing an increased volume of complaint calls fron customers and are interested in effectively communicating with customers, increasing customer satisfaction, improving operational efficiency. The purpose of this project is to analyze a fictional dataset provided and create a dashboard allowing for repeat calls to be tracked 
+
 
 
 A chart or table measuring repeat calls by their first contact date
@@ -14,6 +18,12 @@ Design charts so that stakeholders can view trends by week, month, quarter, and 
 
 
 
+
+
+
+
+
+inroduction business problem goal
 
 
 During the interview process, the Google Fiber customer service team requested the creation of a dashboard based on fictional call center data in order to gain insights into repeat callers. The main goal is to improve customer service through increased operational efficiency and customer satisfaction while reducing call volume. The dashboard created provides stakeholders with critical information on repeat caller volumes across different markets and their related problems.
