@@ -16,6 +16,15 @@ Requirements:
 • Design charts so that stakeholders can view trends by week, month, quarter, and year. 
 
 
+<img width="972" alt="Screenshot 2025-03-03 at 10 30 46 PM" src="https://github.com/user-attachments/assets/d06d4372-6671-47a4-9dd0-2981d7f515d5" />
+
+<img width="969" alt="Screenshot 2025-03-05 at 9 42 34 PM" src="https://github.com/user-attachments/assets/1e98f882-12de-4254-a3d9-e2af967c47b8" />
+
+<img width="969" alt="Screenshot 2025-03-05 at 9 43 15 PM" src="https://github.com/user-attachments/assets/64ff0a9e-4bc6-4d1d-907e-7cea5949773f" />
+
+<img width="967" alt="Screenshot 2025-03-05 at 9 44 21 PM" src="https://github.com/user-attachments/assets/b5b6c781-d86e-459c-b621-41e477dc2862" />
+
+
 Fictional google fiber data on repeat calls. Dataset can be found here: https://drive.google.com/file/d/1mk-j0tvjavpima5w1rZAkTaSco61TpFK/view?usp=sharing
 
 The Final Visualization is hosted in Tableau: https://public.tableau.com/app/profile/jourdon.lynch/viz/GoogleFIberAnalysis/GoogleFiberRepeatCalls
