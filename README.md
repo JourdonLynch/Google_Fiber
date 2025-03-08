@@ -26,6 +26,8 @@ The first chart records repeat calls by week over a fourteen week period broken 
 The second chart shows the breakdown of call reason grouped by the three service areas surveyed. Filters for service area, problem type, and market allow for greater degrees of granularity. Selecting a point on the pie chart allows for the specific amount of calls to be determined. Market recieved the msot calls by far followed by market 2 and market 3.
 <img width="969" alt="Screenshot 2025-03-05 at 9 42 34 PM" src="https://github.com/user-attachments/assets/1e98f882-12de-4254-a3d9-e2af967c47b8" />
 
+
+The third chart records repeat calls broken down by initial contact date and service area.Calls can be further proken down by problem type and the day of date created. Depending on the problem type different markets saw different spikes in initial calls through time.
 <img width="969" alt="Screenshot 2025-03-05 at 9 43 15 PM" src="https://github.com/user-attachments/assets/64ff0a9e-4bc6-4d1d-907e-7cea5949773f" />
 
 <img width="967" alt="Screenshot 2025-03-05 at 9 44 21 PM" src="https://github.com/user-attachments/assets/b5b6c781-d86e-459c-b621-41e477dc2862" />
