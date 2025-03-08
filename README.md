@@ -34,7 +34,5 @@ The dashboard contains all the afformetioned graphs and their functionalities al
 <img width="967" alt="Screenshot 2025-03-05 at 9 44 21 PM" src="https://github.com/user-attachments/assets/b5b6c781-d86e-459c-b621-41e477dc2862" />
 
 
-Fictional google fiber data on repeat calls. Dataset can be found here: https://drive.google.com/file/d/1mk-j0tvjavpima5w1rZAkTaSco61TpFK/view?usp=sharing
-
 The Final Visualization is hosted in Tableau: https://public.tableau.com/app/profile/jourdon.lynch/viz/GoogleFIberAnalysis/GoogleFiberRepeatCalls
 
