@@ -9,14 +9,20 @@ The Google Fiber company provide high-speed internet to homes and businesses thr
 Requirements:
 
 • A chart or table measuring repeat calls by their first contact date
+
 • A chart or table exploring repeat calls by market and problem type
+
 • Charts showcasing repeat calls by week, month, and quarter
+
 • Provide insights into the types of customer issues that seem to generate more repeat calls
+
 • Paste repeat caller trends in the three different market cities
+
 • Design charts so that stakeholders can view trends by week, month, quarter, and year. 
 
-
+The first chart records repeat calls by week over a fourteen week period broken down by how many days it has been since initial contact. Calls are further broken down by the type of call recieved from one of the five categories contrucion, scheduling, account management, technician troubleshooting, and Internet and Wifi.fter the initial call call the majority of problems were resolved indicated by the subequent drop off of calls.
 <img width="972" alt="Screenshot 2025-03-03 at 10 30 46 PM" src="https://github.com/user-attachments/assets/d06d4372-6671-47a4-9dd0-2981d7f515d5" />
+
 
 <img width="969" alt="Screenshot 2025-03-05 at 9 42 34 PM" src="https://github.com/user-attachments/assets/1e98f882-12de-4254-a3d9-e2af967c47b8" />
 
