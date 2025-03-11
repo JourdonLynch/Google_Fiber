@@ -23,16 +23,22 @@ Requirements:
 The first chart records repeat calls by week over a fourteen week period broken down by how many days it has been since initial contact. Calls are further broken down by the type of call recieved from one of the five categories contrucion, scheduling, account management, technician troubleshooting, and Internet and Wifi. Selecting a point on the bar charts allows the specific amount of repeat calls to be determined. After the initial call call the majority of problems were resolved indicated by the subequent drop off of calls.
 <img width="972" alt="Screenshot 2025-03-03 at 10 30 46 PM" src="https://github.com/user-attachments/assets/d06d4372-6671-47a4-9dd0-2981d7f515d5" />
 
+#  
+
 The second chart shows the breakdown of call reason grouped by the three service areas surveyed. Filters for service area, problem type, and market allow for greater degrees of granularity. Selecting a point on a pie chart allows for the specific amount of calls to be determined. Market recieved the msot calls by far followed by market 2 and market 3.
 <img width="969" alt="Screenshot 2025-03-05 at 9 42 34 PM" src="https://github.com/user-attachments/assets/1e98f882-12de-4254-a3d9-e2af967c47b8" />
 
+#  
 
 The third chart records repeat calls broken down by initial contact date and service area.Calls can be further proken down by problem type and the day of date created. Selecting a point on a line chart allows for the specific amount of calls to be determined. Depending on the problem type different markets saw different spikes in initial calls through time.
 <img width="969" alt="Screenshot 2025-03-05 at 9 43 15 PM" src="https://github.com/user-attachments/assets/64ff0a9e-4bc6-4d1d-907e-7cea5949773f" />
 
+#  
+
 The dashboard contains all the afformetioned graphs and their functionalities allowing for repeat calls to quicky be analyzed.
 <img width="967" alt="Screenshot 2025-03-05 at 9 44 21 PM" src="https://github.com/user-attachments/assets/b5b6c781-d86e-459c-b621-41e477dc2862" />
 
+#  
 
 The Final Visualization is hosted in Tableau: https://public.tableau.com/app/profile/jourdon.lynch/viz/GoogleFIberAnalysis/GoogleFiberRepeatCalls
 
