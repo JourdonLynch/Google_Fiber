@@ -20,6 +20,8 @@ Requirements:
 
 • Design charts so that stakeholders can view trends by week, month, quarter, and year. 
 
+#  
+
 The first chart records repeat calls by week over a fourteen-week period broken down by how many days it has been since initial contact. Calls are further broken down by the type of call received from one of the five categories: construction, scheduling, account management, technician troubleshooting, and Internet and Wi-Fi. Selecting a point on the bar charts allows the specific amount of repeat calls to be determined. After the initial call, the majority of problems were resolved, indicated by the subsequent drop-off of calls.
 <img width="972" alt="Screenshot 2025-03-03 at 10 30 46 PM" src="https://github.com/user-attachments/assets/d06d4372-6671-47a4-9dd0-2981d7f515d5" />
 
