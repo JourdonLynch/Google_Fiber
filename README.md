@@ -4,7 +4,7 @@ Introduction/Business problem
 
 
 Introduction:
-The Google Fiber company provide high-speed internet to homes and businesses through their fiber-optic services which are advertized as faster and more reliable than traditional internet connections. However they hve recently been experiecing an increased volume of complaint calls fron customers and are interested in effectively communicating with customers, increasing customer satisfaction, improving operational efficiency. The purpose of this project is to analyze a fictional dataset provided and create a dashboard allowing for repeat calls to be tracked based on the specifications of the Google fiber customer service team
+The Google Fiber company provides high-speed internet to homes and businesses through their fiber-optic services, which are advertized as faster and more reliable than traditional internet connections. However, they have recently been experiecing an increased volume of complaint calls from customers and are interested in effectively communicating with customers, increasing customer satisfaction, and improving operational efficiency. The purpose of this project is to analyze a fictional dataset provided and create a dashboard allowing for repeat calls to be tracked based on the specifications of the Google Fiber customer service team.
 
 Requirements:
 
@@ -20,12 +20,14 @@ Requirements:
 
 • Design charts so that stakeholders can view trends by week, month, quarter, and year. 
 
-The first chart records repeat calls by week over a fourteen week period broken down by how many days it has been since initial contact. Calls are further broken down by the type of call recieved from one of the five categories contrucion, scheduling, account management, technician troubleshooting, and Internet and Wifi. Selecting a point on the bar charts allows the specific amount of repeat calls to be determined. After the initial call call the majority of problems were resolved indicated by the subequent drop off of calls.
+The first chart records repeat calls by week over a fourteen-week period broken down by how many days it has been since initial contact. Calls are further broken down by the type of call received from one of the five categories: construction, scheduling, account management, technician troubleshooting, and Internet and Wi-Fi. Selecting a point on the bar charts allows the specific amount of repeat calls to be determined. After the initial call, the majority of problems were resolved, indicated by the subsequent drop-off of calls.
 <img width="972" alt="Screenshot 2025-03-03 at 10 30 46 PM" src="https://github.com/user-attachments/assets/d06d4372-6671-47a4-9dd0-2981d7f515d5" />
 
 #  
 
-The second chart shows the breakdown of call reason grouped by the three service areas surveyed. Filters for service area, problem type, and market allow for greater degrees of granularity. Selecting a point on a pie chart allows for the specific amount of calls to be determined. Market recieved the msot calls by far followed by market 2 and market 3.
+The second chart shows the breakdown of call reasons grouped by the three service areas surveyed. Filters for service area, problem type, and market allow for greater degrees of granularity. Selecting a point on a pie chart allows for the specific amount of calls to be determined. Market received the most calls by far, followed by market 2 and market 3.
+
+
 <img width="969" alt="Screenshot 2025-03-05 at 9 42 34 PM" src="https://github.com/user-attachments/assets/1e98f882-12de-4254-a3d9-e2af967c47b8" />
 
 #  
