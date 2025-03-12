@@ -32,7 +32,7 @@ The second chart shows the breakdown of call reasons grouped by the three servic
 
 #  
 
-The third chart records repeat calls broken down by initial contact date and service area.Calls can be further proken down by problem type and the day of date created. Selecting a point on a line chart allows for the specific amount of calls to be determined. Depending on the problem type different markets saw different spikes in initial calls through time.
+The third chart records repeat calls broken down by initial contact date and the area serviced. Calls can be further broken down by problem type and the day the date was created. Selecting a point on a line chart allows for the specific amount of calls to be determined. Depending on the problem type, different markets saw elevated periods of calls.
 <img width="969" alt="Screenshot 2025-03-05 at 9 43 15 PM" src="https://github.com/user-attachments/assets/64ff0a9e-4bc6-4d1d-907e-7cea5949773f" />
 
 #  
