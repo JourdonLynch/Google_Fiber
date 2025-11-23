@@ -34,6 +34,7 @@ WITH
   ORDER BY
     Market,
     SUM(contacts_n) DESC )
+
 SELECT
   *,
   ROUND(SUM(Count)*100/SUM(SUM(count)) OVER(PARTITION BY Market ),2) AS Percent_of_Total,
