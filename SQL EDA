@@ -1,0 +1,114 @@
+  -- Market Size by total calls
+
+SELECT
+  RANK() OVER (ORDER BY SUM(contacts_n) DESC) AS Market_Size,
+  new_market AS Service_Area,
+  SUM(
+      COALESCE(contacts_n, 0)
+    + COALESCE(contacts_n_1, 0)
+    + COALESCE(contacts_n_2, 0)
+    + COALESCE(contacts_n_3, 0)
+    + COALESCE(contacts_n_4, 0)
+    + COALESCE(contacts_n_5, 0)
+    + COALESCE(contacts_n_6, 0)
+    + COALESCE(contacts_n_7, 0)
+  ) AS Total_Calls,
+  SUM(COALESCE(contacts_n, 0)) AS Initial_Calls
+FROM Markets.google_data
+GROUP BY new_market
+ORDER BY Initial_Calls DESC;
+
+
+  -- Market breakdown by initial calls and problem type
+
+WITH problem_count AS (
+  SELECT
+    new_market AS Market,
+    CASE
+      WHEN new_type = 'type_1' THEN 'Account Management'
+      WHEN new_type = 'type_2' THEN 'Technician Troubleshooting'
+      WHEN new_type = 'type_3' THEN 'Scheduling'
+      WHEN new_type = 'type_4' THEN 'Construction'
+      WHEN new_type = 'type_5' THEN 'Internet and Wifi'
+    END AS Problem_Type,
+    SUM(contacts_n) AS Count
+  FROM Markets.google_data
+  GROUP BY
+    new_market,
+    new_type
+)
+
+SELECT
+  Market,
+  Problem_Type,
+  Count,
+  ROUND(
+    Count * 100.0
+    / SUM(Count) OVER (PARTITION BY Market),
+    2
+  ) AS Percent_of_Total
+FROM problem_count
+ORDER BY
+  Market,
+  Percent_of_Total DESC;
+
+
+
+  -- Market Breakdown by repeat calls and problem type
+
+SELECT
+  new_market AS Market,
+  CASE
+    WHEN new_type = 'type_1' THEN 'Account Management'
+    WHEN new_type = 'type_2' THEN 'Technician Troubleshooting'
+    WHEN new_type = 'type_3' THEN 'Scheduling'
+    WHEN new_type = 'type_4' THEN 'Construction'
+    WHEN new_type = 'type_5' THEN 'Internet and Wifi'
+    ELSE 'Other'
+  END AS Problem_Type,
+  SUM(contacts_n)   AS Initial_Calls,
+  SUM(contacts_n_1) AS Day_1_Repeat_Calls,
+  SUM(contacts_n_2) AS Day_2_Repeat_Calls,
+  SUM(contacts_n_3) AS Day_3_Repeat_Calls,
+  SUM(contacts_n_4) AS Day_4_Repeat_Calls,
+  SUM(contacts_n_5) AS Day_5_Repeat_Calls,
+  SUM(contacts_n_6) AS Day_6_Repeat_Calls,
+  SUM(contacts_n_7) AS Day_7_Repeat_Calls
+FROM Markets.google_data
+GROUP BY
+  new_market,
+  new_type
+ORDER BY
+  Market,
+  Problem_Type;
+
+
+
+ -- Peak initial calls day by market
+
+WITH daily_calls AS (
+  SELECT
+    new_market AS Service_Area,
+    date_created,
+    SUM(contacts_n) AS total_initial_calls
+  FROM Markets.google_data
+  GROUP BY
+    new_market,
+    date_created
+)
+
+SELECT
+  Service_Area,
+  date_created AS Peak_Date,
+  total_initial_calls AS Peak_Initial_Calls
+FROM (
+  SELECT *,
+         ROW_NUMBER() OVER(PARTITION BY Service_Area ORDER BY total_initial_calls DESC) AS rn
+  FROM daily_calls
+) t
+WHERE rn = 1
+ORDER BY Service_Area;
+
+
+
+ 
