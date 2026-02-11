@@ -1,7 +1,5 @@
 # Google_Fiber
 
-Introduction/Business problem
-
 
 Introduction:
 The Google Fiber company provides high-speed internet to homes and businesses through their fiber-optic services, which are advertized as faster and more reliable than traditional internet connections. However, they have recently been experiecing an increased volume of complaint calls from customers and are interested in effectively communicating with customers, increasing customer satisfaction, and improving operational efficiency. The purpose of this project is to analyze a fictional dataset provided and create a dashboard allowing for repeat calls to be tracked based on the specifications of the Google Fiber customer service team.
